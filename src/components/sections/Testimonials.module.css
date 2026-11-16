@@ -53,7 +53,7 @@
 
 .gallery img {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: var(--r-card);
   background: var(--c-brand-soft);

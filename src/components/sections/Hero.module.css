@@ -259,3 +259,48 @@
     font-size: 14px;
   }
 }
+
+/* ── Tablet + mobile: photo at its native 3:2 shape (no subject cropping),
+      bubbles only overlap the outer edge of the frame, never the subjects. ── */
+@media (max-width: 960px) {
+  .visual {
+    aspect-ratio: auto;
+    max-width: 560px;
+    padding: 44px 0 48px;
+  }
+  .circle {
+    inset: 10% -14% 4% 30%;
+  }
+  .circle::after {
+    display: none;
+  }
+  .photoWrap {
+    position: relative;
+    inset: auto;
+    aspect-ratio: 3 / 2;
+  }
+  .photo {
+    object-position: 50% 50% !important;
+  }
+  .floatLesson {
+    top: 0;
+    left: 0;
+    right: auto;
+  }
+  .floatRating {
+    bottom: 0;
+    right: 12px;
+    left: auto;
+  }
+}
+
+/* Narrow phones: no room beside the trainer's head for the lesson card,
+   so drop it instead of covering her. The rating card stays on the edge. */
+@media (max-width: 640px) {
+  .floatLesson {
+    display: none;
+  }
+  .visual {
+    padding-top: 8px;
+  }
+}

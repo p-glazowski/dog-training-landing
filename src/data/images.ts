@@ -72,7 +72,7 @@ export const images = {
     private: {
       src: privateSession,
       alt: 'Trenerka uczy psa przybijania piątki',
-      pos: '50% 14%',
+      pos: '50% 11%',
     },
     online: {
       src: online,
@@ -98,17 +98,17 @@ export const images = {
     puppyLeash: {
       src: puppyLeash,
       alt: 'Szczeniak golden retrievera biegnie na smyczy',
-      pos: '50% 68%',
+      pos: '50% 72%',
     },
     bulldogPuppy: {
       src: bulldogPuppy,
       alt: 'Szczeniak buldoga patrzy na rękę opiekuna',
-      pos: '42% 50%',
+      pos: '38% 50%',
     },
     malinoisPuppy: {
       src: malinoisPuppy,
       alt: 'Szczeniak owczarka belgijskiego siedzi i patrzy na opiekuna',
-      pos: '55% 62%',
+      pos: '50% 82%',
     },
   },
 } satisfies Record<string, Photo | Record<string, Photo>>
