@@ -1,0 +1,86 @@
+:root {
+  /* Accent – warm coral (actions, CTAs) */
+  --c-accent: #ff7a59;
+  --c-accent-hover: #ff9275;
+  --c-accent-strong: #e5583a;
+  --c-accent-soft: #ffece5;
+  --c-accent-ink: #b4472a;
+  --c-accent-ring: rgba(255, 122, 89, 0.22);
+  --c-star: #f4b33d;
+
+  /* Brand – forest / sage green (trust, structure) */
+  --c-brand: #2f8f6b;
+  --c-brand-deep: #1f6e52;
+  --c-brand-bright: #8fd3b0;
+  --c-brand-soft: #e1f0e7;
+  --c-brand-circle: #d2e9dc;
+  --c-card-border: #bcdcca;
+
+  /* Dark */
+  --c-dark: #1c3b32;
+  --c-dark-hover: #285446;
+
+  /* Surfaces */
+  --c-white: #ffffff;
+  --c-bg-grey: #faf6f0; /* warm cream */
+  --c-bg-mint: #eef6f1; /* sage */
+  --c-bg-warm: #fdfbf7;
+  --c-footer: #1c3b32;
+
+  /* Text */
+  --c-text: #15211c;
+  --c-text-2: #3e4a45;
+  --c-muted: #6f7a75;
+  --c-placeholder: #a2aaa6;
+
+  /* Lines */
+  --c-border: #e7e5df;
+  --c-border-neutral: #d3d6d1;
+  --c-border-faq: #b4c6bc;
+  --c-hairline: rgba(21, 33, 28, 0.09);
+
+  /* Gradients */
+  --g-hero: linear-gradient(180deg, #e2f1e8 -17%, #fbf7f1 121%);
+  --g-cta: linear-gradient(0deg, #d9eee2 0%, #fdfbf7 100%);
+
+  /* Type */
+  --f-head: 'Outfit', 'Nunito Sans', system-ui, sans-serif;
+  --f-body: 'Lato', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Radii */
+  --r-btn: 3px;
+  --r-card: 8px;
+  --r-lg: 16px;
+  --r-faq: 24px;
+  --r-pill: 9999px;
+
+  /* Layout */
+  --container: 1140px;
+  --gutter: 24px;
+  --section-pt: 136px;
+  --section-pb: 112px;
+  --header-h: 90px;
+
+  /* Shadow (used sparingly – floating cards only) */
+  --sh-float: 0 12px 32px var(--c-hairline), 0 2px 6px rgba(9, 9, 11, 0.04);
+
+  /* Motion */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 960px) {
+  :root {
+    --section-pt: 96px;
+    --section-pb: 88px;
+    --header-h: 72px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: 16px;
+    --section-pt: 72px;
+    --section-pb: 72px;
+  }
+}

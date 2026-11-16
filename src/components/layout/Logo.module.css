@@ -1,0 +1,33 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--c-text);
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--c-brand);
+  color: #fff;
+  transform: rotate(-8deg);
+}
+
+.word {
+  font-family: var(--f-head);
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.word b {
+  font-weight: 700;
+}
+
+.inverted {
+  color: #fff;
+}

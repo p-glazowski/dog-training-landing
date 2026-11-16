@@ -1,0 +1,261 @@
+.hero {
+  position: relative;
+  background: var(--g-hero);
+  padding: calc(var(--header-h) + 64px) 0 72px;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 64px;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.title {
+  max-width: 560px;
+}
+
+.lead {
+  max-width: 500px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  color: var(--c-text-2);
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* Visual */
+.visual {
+  position: relative;
+  aspect-ratio: 1 / 1.02;
+  max-width: 520px;
+  width: 100%;
+  justify-self: end;
+}
+
+.circle {
+  position: absolute;
+  inset: 4% -6% -2% 6%;
+  border-radius: 50%;
+  background: var(--c-brand-circle);
+}
+
+.circle::after {
+  content: '';
+  position: absolute;
+  width: 22%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid var(--c-brand);
+  right: -2%;
+  top: 2%;
+  opacity: 0.6;
+}
+
+.photoWrap {
+  position: absolute;
+  inset: 8% 6% 6% 10%;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--c-brand-soft);
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.float {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: var(--c-white);
+  box-shadow: var(--sh-float);
+}
+
+.float > span:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.floatRating {
+  right: -5%;
+  bottom: 0;
+}
+
+.floatLesson {
+  left: -2%;
+  top: 2%;
+}
+
+.floatIconOrange,
+.floatIconGreen {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.floatIconOrange {
+  background: var(--c-accent-soft);
+  color: var(--c-star);
+}
+
+.floatIconGreen {
+  background: var(--c-brand-soft);
+  color: var(--c-brand-deep);
+}
+
+.floatBig {
+  font-family: var(--f-head);
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+.floatMid {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.floatSmall {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--c-muted);
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 72px;
+  padding-top: 40px;
+  border-top: 1px solid var(--c-hairline);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 24px;
+  border-left: 1px solid var(--c-hairline);
+}
+
+.stat:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.statValue {
+  font-family: var(--f-head);
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 15px;
+  color: var(--c-text-2);
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .visual {
+    justify-self: center;
+    max-width: 480px;
+  }
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 32px;
+  }
+  .stat:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: calc(var(--header-h) + 32px);
+    padding-bottom: 56px;
+  }
+  .lead {
+    font-size: 17px;
+    line-height: 27px;
+  }
+  .ctas {
+    width: 100%;
+    flex-direction: column;
+  }
+  .ctas > * {
+    width: 100%;
+  }
+  .float {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  .floatIconOrange,
+  .floatIconGreen {
+    width: 32px;
+    height: 32px;
+  }
+  .floatRating {
+    right: 0;
+    bottom: -2%;
+  }
+  .floatLesson {
+    left: 0;
+    top: 0;
+  }
+  .floatBig {
+    font-size: 20px;
+    line-height: 22px;
+  }
+  .floatMid {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .floatSmall {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .stats {
+    margin-top: 48px;
+    padding-top: 32px;
+  }
+  .stat {
+    padding: 0 16px;
+  }
+  .statValue {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .statLabel {
+    font-size: 14px;
+  }
+}

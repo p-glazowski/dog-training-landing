@@ -1,0 +1,150 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.25s,
+    border-color 0.25s,
+    height 0.25s;
+}
+
+.scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom-color: var(--c-border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.link {
+  position: relative;
+  font-size: 16px;
+  color: var(--c-text);
+  padding: 6px 0;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--c-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s var(--ease-out);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.phone svg {
+  color: var(--c-brand-deep);
+}
+
+.burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 0;
+  background: none;
+  padding: 0;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .phone {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav,
+  .cta {
+    display: none;
+  }
+  .burger {
+    display: grid;
+  }
+  .mobile {
+    display: block;
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    /* header has backdrop-filter → it is the containing block, so size explicitly */
+    height: calc(100dvh - var(--header-h));
+    overflow-y: auto;
+    background: var(--c-white);
+    padding: 16px 0 32px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition:
+      opacity 0.25s,
+      transform 0.25s var(--ease-out),
+      visibility 0.25s;
+  }
+  .mobileOpen {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNav a {
+  font-family: var(--f-head);
+  font-size: 28px;
+  line-height: 1;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.mobileActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+}

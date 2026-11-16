@@ -1,0 +1,263 @@
+/* CTA band */
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.cta p {
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--c-text-2);
+  margin-bottom: 16px;
+}
+
+/* FAQ */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  border: 1px solid var(--c-border-faq);
+  border-radius: var(--r-faq);
+  background: var(--c-white);
+  transition: border-color 0.2s;
+}
+
+.item:hover,
+.itemOpen {
+  border-color: var(--c-brand);
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-height: 56px;
+  padding: 14px 24px;
+  border: 0;
+  background: none;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: var(--r-faq);
+}
+
+.chevron {
+  flex: none;
+  transition: transform 0.3s var(--ease-out);
+  color: var(--c-text-2);
+}
+
+.itemOpen .chevron {
+  transform: rotate(180deg);
+  color: var(--c-accent);
+}
+
+.answerWrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s var(--ease-out);
+}
+
+.itemOpen .answerWrap {
+  grid-template-rows: 1fr;
+}
+
+.answerInner {
+  overflow: hidden;
+}
+
+.answer {
+  padding: 0 24px 20px;
+  color: var(--c-text-2);
+  font-size: 15px;
+  line-height: 24px;
+}
+
+/* Contact */
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 80px;
+  align-items: start;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contactHeading {
+  margin-bottom: 0;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infoList li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.infoList li > span:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoList small {
+  font-size: 13px;
+  color: var(--c-muted);
+}
+
+.infoList a,
+.infoList b {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.infoList a:hover {
+  color: var(--c-accent);
+}
+
+.infoIcon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--c-white);
+  border: 1px solid var(--c-brand);
+  color: var(--c-brand-deep);
+}
+
+.reply {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--r-pill);
+  background: var(--c-brand-deep);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 40px;
+  background: var(--c-white);
+  border: 1px solid var(--c-brand);
+  border-radius: var(--r-card);
+}
+
+.formTitle {
+  font-family: var(--f-head);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field > span {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid var(--c-border-neutral);
+  border-radius: var(--r-btn);
+  background: var(--c-white);
+  font-size: 16px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 112px;
+}
+
+.field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%233d3c3c' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--c-placeholder);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px var(--c-accent-ring);
+}
+
+.note {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--c-muted);
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .form {
+    padding: 24px 20px;
+  }
+  .row {
+    grid-template-columns: 1fr;
+  }
+  .question {
+    padding: 14px 20px;
+  }
+  .answer {
+    padding: 0 20px 18px;
+  }
+}

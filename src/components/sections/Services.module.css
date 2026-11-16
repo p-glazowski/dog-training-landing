@@ -1,0 +1,142 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--c-white);
+  border: 1px solid var(--c-card-border);
+  border-radius: var(--r-card);
+  transition:
+    opacity 0.8s var(--ease-out),
+    transform 1s var(--ease-spring),
+    border-color 0.2s;
+}
+
+.featured {
+  border: 2px solid var(--c-brand-deep);
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.media {
+  margin: 8px 8px 0;
+  aspect-ratio: 4 / 3;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--c-brand-soft);
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.card:hover {
+  border-color: var(--c-brand);
+}
+
+.card:hover .media img {
+  transform: scale(1.04);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 24px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.title {
+  margin-top: 8px;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.desc {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 23px;
+  color: var(--c-text-2);
+}
+
+.points {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0 24px;
+}
+
+.points li {
+  display: flex;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.points svg {
+  flex: none;
+  color: var(--c-brand);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--c-border);
+}
+
+.price {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+  margin-top: 56px;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .more {
+    margin-top: 40px;
+  }
+  .more > * {
+    white-space: normal;
+    text-align: center;
+  }
+}

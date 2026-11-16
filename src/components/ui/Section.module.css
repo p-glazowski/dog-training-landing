@@ -1,0 +1,31 @@
+.section {
+  position: relative;
+  padding: var(--section-pt) 0 var(--section-pb);
+  overflow-x: clip; /* decorative blobs may bleed past the edge */
+}
+
+.compact {
+  padding: 96px 0;
+}
+
+@media (max-width: 640px) {
+  .compact {
+    padding: 64px 0;
+  }
+}
+
+.white {
+  background: var(--c-white);
+}
+.grey {
+  background: var(--c-bg-grey);
+}
+.mint {
+  background: var(--c-bg-mint);
+}
+.warm {
+  background: var(--c-bg-warm);
+}
+.cta {
+  background: var(--g-cta);
+}
